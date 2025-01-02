@@ -1,6 +1,6 @@
 import { Callout, FileTree, Tabs } from "nextra/components";
 
-# Back-end
+# Getting started
 
 FlowInquiry back-end is a spring boot application, and it has several components:
 
@@ -135,44 +135,45 @@ postgresql-1  | UTC [1] LOG:  database system is ready to accept connections
 #### Run flowinquiry server
 
 <Tabs items={['Gradle', 'IntelliJ']}>
-<Tabs.Tab>
-From the root folder, run the command `./gradlew :server:bootRun`
+    <Tabs.Tab>
+        From the root folder, run the command `./gradlew :server:bootRun`
 
-```bash
-➜  flowinquiry-server git:(main) ./gradlew :server:bootRun
-Starting a Gradle Daemon, 1 incompatible Daemon could not be reused, use --status for details
+        ```bash
+        ➜  flowinquiry-server git:(main) ./gradlew :server:bootRun
+        Starting a Gradle Daemon, 1 incompatible Daemon could not be reused, use --status for details
 
-> Task :server:bootRun
+        > Task :server:bootRun
 
-:: FlowInquiry 🤓  :: Running Spring Boot 3.3.1 :: Startup profile(s) dev ::
-:: https://www.flowinquiry.io ::
+        :: FlowInquiry 🤓  :: Running Spring Boot 3.3.1 :: Startup profile(s) dev ::
+        :: https://www.flowinquiry.io ::
 
-______ _             _____                  _
-|  ___| |           |_   _|                (_)
-| |_  | | _____      _| | _ __   __ _ _   _ _ _ __ _   _
-|  _| | |/ _ \ \ /\ / / || '_ \ / _` | | | | | '__| | | |
-| |   | | (_) \ V  V /| || | | | (_| | |_| | | |  | |_| |
-\_|   |_|\___/ \_/\_/\___/_| |_|\__, |\__,_|_|_|   \__, |
-                                   | |              __/ |
-                                   |_|             |___/
+        ______ _             _____                  _
+        |  ___| |           |_   _|                (_)
+        | |_  | | _____      _| | _ __   __ _ _   _ _ _ __ _   _
+        |  _| | |/ _ \ \ /\ / / || '_ \ / _` | | | | | '__| | | |
+        | |   | | (_) \ V  V /| || | | | (_| | |_| | | |  | |_| |
+        \_|   |_|\___/ \_/\_/\___/_| |_|\__, |\__,_|_|_|   \__, |
+        | |              __/ |
+        |_|             |___/
 
 
 
-:: FlowInquiry 🤓  :: Running Spring Boot 3.4.0 :: Startup profile(s) dev ::
-:: https://www.flowinquiry.io ::
-DEBUG 25048 --- [kground-preinit] org.jboss.logging.logProvider:164 : Logging Provider: org.jboss.logging.Slf4jLoggerProvider found via system property
-DEBUG 50958 --- [  restartedMain] io.flowinquiry.FlowInquiryApp.logStarting:54 : Running with Spring Boot v3.4.0, Spring v6.2.0
-```
+        :: FlowInquiry 🤓  :: Running Spring Boot 3.4.0 :: Startup profile(s) dev ::
+        :: https://www.flowinquiry.io ::
+        DEBUG 25048 --- [kground-preinit] org.jboss.logging.logProvider:164 : Logging Provider: org.jboss.logging.Slf4jLoggerProvider found via system property
+        DEBUG 50958 --- [  restartedMain] io.flowinquiry.FlowInquiryApp.logStarting:54 : Running with Spring Boot v3.4.0, Spring v6.2.0
+        ```
 
-It may take some time before the server APIs are accessible on the default port `8080`
+        It may take some time before the server APIs are accessible on the default port `8080`
 
-</Tabs.Tab>
-<Tabs.Tab>
-You can import the FlowInquiry server into IntelliJ as a Gradle project. Once imported, run the `io.flowinquiry.FlowInquiryApp` class as a standalone Java application
+    </Tabs.Tab>
+    <Tabs.Tab>
+        You can import the FlowInquiry server into IntelliJ as a Gradle project. Once imported, run the `io.flowinquiry.FlowInquiryApp` class as a standalone Java application
 
-![IntelliJ](/assets/flowinquiry_intellij.png)
+        ![IntelliJ](/assets/flowinquiry_intellij.png)
 
-As similar than gradle command, it will take some time before the server APIs are accessible on the default port `8080`
+        As similar than gradle command, it will take some time before the server APIs are accessible on the default port `8080`
 
-</Tabs.Tab>
+    </Tabs.Tab>
+
 </Tabs>

@@ -14,4 +14,10 @@ export default {
       typesetting: "article",
     },
   },
+  contact: {
+    title: "Contact Us",
+    type: "page",
+    href: "https://flowinquiry.io/contact",
+    newWindow: true,
+  },
 };

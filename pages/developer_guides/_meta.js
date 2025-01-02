@@ -1,7 +1,7 @@
 export default {
   index: "Home",
-  front_end: "Front End",
-  back_end: "Back End",
+  frontend: "Front End",
+  backend: "Back End",
   deployment: "Deployment",
   how_to_contributes: "How to contribute",
 };
