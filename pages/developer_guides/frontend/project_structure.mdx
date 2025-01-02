@@ -1,0 +1,22 @@
+# Project Structure
+
+FlowInquiry is a [Next.js](https://nextjs.org/) 15 application that follows the standard project structure and utilizes the App Router for routing. The structure is designed to ensure modularity, scalability, and ease of maintenance. Below is a detailed description of the main components:
+
+- **app/:**
+  Contains the core routing structure of the application. Each subfolder represents a route, and files like page.tsx, layout.tsx, and loading.tsx define the page components, layouts, and loading states, respectively.
+
+- **components/:**
+  A centralized repository for reusable React components in FlowInquiry, including [Shadcn](https://ui.shadcn.com/) components stored in the `components/ui` folder. Additionally, this folder houses client-specific components for FlowInquiry modules such as teams, workflows, and others.
+
+- **hooks/:**
+  Custom React hooks are stored here to encapsulate reusable logic
+
+- **lib/:**
+  The reusable ultlity methods, error handling and common types are used across FlowInquiry components.
+
+- **lib/actions/:**
+  The API wrappers facilitate communication with the FlowInquiry backend from both the Next.js client and server sides. We minimize the use of Next.js server actions, opting instead to make backend calls primarily from the client side (browser) in most cases.
+
+- **types/**:
+  Defines all object types used in the FlowInquiry front-end, including data transfer objects (DTOs) for communication between the front-end and back-end, as well as data types for user inputs in React forms.
+  We extensively use [Zod](https://zod.dev/) schemas to ensure robust data validation during exchanges between the front-end and back-end
