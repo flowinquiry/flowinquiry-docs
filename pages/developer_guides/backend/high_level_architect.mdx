@@ -2,6 +2,8 @@
 
 The FlowInquiry Backend is the core service layer of the FlowInquiry application, responsible for handling business logic, data management, event-driven actions, and integrations. It provides RESTful APIs to interact with the FlowInquiry Frontend and other systems, ensuring secure, scalable, and efficient operations. The backend adheres to a modular design where each component has a distinct responsibility to enhance maintainability and extensibility.
 
+## FlowInquiry Component Diagram
+
 ```mermaid
 graph TD
   subgraph FlowInquiry Backend
@@ -70,3 +72,51 @@ Executes periodic or scheduled tasks within the backend.
 Triggers predefined workflows, SLA checks, or cleanup operations.
 Integrates with the Service layer to ensure scheduled tasks align with application logic.
 We use [ShedLock](https://github.com/lukas-krecan/ShedLock) to ensure that identical jobs do not run in parallel, preventing potential conflicts and maintaining job consistency.
+
+## FlowInquiry Modules
+
+FlowInquiry is organized into five core modules, with plans to expand as the application evolves. Each module encapsulates functionality for specific areas of the system:
+
+- **Audit:**
+  Handles all code related to auditing, including tracking changes and recording historical data for accountability.
+
+- **Collab:**
+  Manages collaboration features such as notifications and comments. Future enhancements will include knowledge management capabilities.
+
+- **Fss (File System Services):**
+  Focuses on file and resource management, including cloud file storage and related operations.
+
+- **Team:**
+  Covers functionality for teams, organizations, and workflows, as well as core business information.
+
+- **UserManagement:**
+  Responsible for user management, access control, and resource permissions to ensure secure and efficient operations.
+
+This modular design ensures scalability, maintainability, and the ability to integrate additional functionality seamlessly as the application grows.
+
+All these modules are organized under the package `io.flowinquiry.modules` and adhere to the following consistent package design principles.
+
+### FlowInquiry package design
+
+To maintain a clean and consistent architecture, FlowInquiry follows these package design principles for organizing modules:
+
+- **Domain (io.flowinquiry.modules.module_name.domain):**
+  Contains application-specific classes, such as Hibernate entities, representing the core business domain.
+
+- **Repository (io.flowinquiry.modules.module_name.repository):**
+  Includes all Spring Data repositories used for database access and operations.
+
+- **Service (io.flowinquiry.modules.module_name.service):**
+  Implements business logic and rules, interacts with the database through repositories, integrates with mail components, and publishes events for further processing by event listeners.
+
+- **DTO (io.flowinquiry.modules.module_name.service.dto):**
+  Contains Data Transfer Objects used for exchanging data between the FlowInquiry backend, frontend, or external systems.
+
+- **Mapper (io.flowinquiry.modules.module_name.service.mapper):**
+  Handles transformations between DTOs and entities, ensuring all transformation logic is executed within the service layer.
+
+- **Web Controller (io.flowinquiry.modules.module_name.web.rest):**
+  Houses Spring controllers that provide HTTP methods to handle requests from the FlowInquiry frontend.
+
+- **Event Listeners (io.flowinquiry.modules.module_name.service.listener):**
+  Contains event-driven handlers responsible for post-processing tasks in the service layer, such as creating audit logs after saving entities like teams.
