@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
+import Script from "next/script";
 import type { DocsThemeConfig } from "nextra-theme-docs";
 import { useConfig } from "nextra-theme-docs";
-import Script from "next/script";
 
 const config: DocsThemeConfig = {
   project: {
