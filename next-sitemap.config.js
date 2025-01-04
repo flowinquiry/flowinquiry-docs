@@ -1,8 +1,7 @@
 /** @type {import('next-sitemap').IConfig} */
-module.exports = {
+const config = {
   siteUrl: "https://docs.flowinquiry.com",
   generateRobotsTxt: true,
-  robotsTxtOptions: {
-    additionalSitemaps: ["https://docs.flowinquiry.com/sitemap-0.xml"],
-  },
 };
+
+export default config;
