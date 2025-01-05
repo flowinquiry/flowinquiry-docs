@@ -2,10 +2,10 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
+import Image from "next/image";
 import React, { useState } from "react";
 import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import Image from "next/image";
 
 const ScreenshotSlideshow = ({ slides = [] }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
