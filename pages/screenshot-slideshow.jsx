@@ -2,7 +2,6 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import Image from "next/image";
 import React, { useState } from "react";
 import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -44,7 +43,7 @@ const ScreenshotSlideshow = ({ slides = [] }) => {
           <SwiperSlide key={index}>
             <div className="flex justify-center items-center h-full">
               <div className="relative max-w-full">
-                <Image
+                <img
                   src={slide.image}
                   alt={`Screenshot ${index + 1}`}
                   className="rounded-lg shadow-lg mx-auto"
