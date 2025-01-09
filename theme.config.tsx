@@ -13,6 +13,15 @@ const config: DocsThemeConfig = {
       <img alt="FlowInquiry Logo" src="/logo.png" />
     </>
   ),
+  banner: {
+    key: "2.0-release",
+    content: (
+      <a href="https://flowinquiry.io" target="_blank">
+        🚀 Want to try FlowInquiry? Navigate to flowinquiry.io and sign up now!
+        📝
+      </a>
+    ),
+  },
   head: function useHead() {
     const config = useConfig();
     const { route } = useRouter();
