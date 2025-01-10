@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://docs.flowinquiry.io
+Host: https://docs.flowinquiry.io/docs
 
 # Sitemaps
-Sitemap: https://docs.flowinquiry.io/sitemap.xml
+Sitemap: https://docs.flowinquiry.io/docs/sitemap.xml

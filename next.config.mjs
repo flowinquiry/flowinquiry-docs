@@ -17,7 +17,7 @@ const sep = path.sep === "/" ? "/" : "\\\\";
 const ALLOWED_SVG_REGEX = new RegExp(`components${sep}icons${sep}.+\\.svg$`);
 
 export default withNextra({
-  basePath: "",
+  basePath: "/docs",
   reactStrictMode: true,
   output: "export",
   images: {
