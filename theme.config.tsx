@@ -10,7 +10,7 @@ const config: DocsThemeConfig = {
   docsRepositoryBase: "https://github.com/flowinquiry/flowinquiry-docs",
   logo: (
     <>
-      <img alt="FlowInquiry Logo" src="/logo.png" />
+      <img alt="FlowInquiry Logo" src="/images/logo.png" />
     </>
   ),
   banner: {
