@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>https://docs.flowinquiry.io/docs</loc><lastmod>2025-01-10T04:08:44.754Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://docs.flowinquiry.io/docs/about</loc><lastmod>2025-01-10T04:08:44.754Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://docs.flowinquiry.io/docs/developer_guides</loc><lastmod>2025-01-10T04:08:44.754Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://docs.flowinquiry.io/docs/developer_guides/backend/database_migration</loc><lastmod>2025-01-10T04:08:44.754Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://docs.flowinquiry.io/docs/developer_guides/backend/getting_started</loc><lastmod>2025-01-10T04:08:44.754Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://docs.flowinquiry.io/docs/developer_guides/backend/high_level_architect</loc><lastmod>2025-01-10T04:08:44.754Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://docs.flowinquiry.io/docs/developer_guides/deployment/docker</loc><lastmod>2025-01-10T04:08:44.754Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://docs.flowinquiry.io/docs/developer_guides/frontend/getting_started</loc><lastmod>2025-01-10T04:08:44.754Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://docs.flowinquiry.io/docs/developer_guides/frontend/project_structure</loc><lastmod>2025-01-10T04:08:44.754Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://docs.flowinquiry.io/docs/developer_guides/how_to_contributes</loc><lastmod>2025-01-10T04:08:44.754Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://docs.flowinquiry.io/docs/screenshot-slideshow</loc><lastmod>2025-01-10T04:08:44.754Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://docs.flowinquiry.io</loc><lastmod>2025-01-13T04:15:56.822Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://docs.flowinquiry.io/about</loc><lastmod>2025-01-13T04:15:56.823Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://docs.flowinquiry.io/developer_guides</loc><lastmod>2025-01-13T04:15:56.823Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://docs.flowinquiry.io/developer_guides/backend/database_migration</loc><lastmod>2025-01-13T04:15:56.823Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://docs.flowinquiry.io/developer_guides/backend/getting_started</loc><lastmod>2025-01-13T04:15:56.823Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://docs.flowinquiry.io/developer_guides/backend/high_level_architect</loc><lastmod>2025-01-13T04:15:56.823Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://docs.flowinquiry.io/developer_guides/deployment/docker</loc><lastmod>2025-01-13T04:15:56.823Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://docs.flowinquiry.io/developer_guides/frontend/getting_started</loc><lastmod>2025-01-13T04:15:56.823Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://docs.flowinquiry.io/developer_guides/frontend/project_structure</loc><lastmod>2025-01-13T04:15:56.823Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://docs.flowinquiry.io/developer_guides/how_to_contributes</loc><lastmod>2025-01-13T04:15:56.823Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://docs.flowinquiry.io/screenshot-slideshow</loc><lastmod>2025-01-13T04:15:56.823Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 </urlset>

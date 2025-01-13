@@ -11,7 +11,7 @@ import globals from "globals";
 export default [
   {
     files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
-    ignores: ["out", ".next", ".next/**"],
+    ignores: ["out/**", ".next", ".next/**"],
     plugins: {
       "unused-imports": unusedImports,
       "simple-import-sort": simpleImportSort,
