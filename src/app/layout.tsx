@@ -8,9 +8,9 @@ import type { FC, ReactNode } from "react";
 
 export const metadata: Metadata = {
   description: "Make beautiful websites with Next.js & MDX.",
-  metadataBase: new URL("https://nextra.site"),
+  metadataBase: new URL("https://https://flowinquiry.io"),
   keywords: [
-    "Nextra",
+    "FlowInquiry",
     "Next.js",
     "React",
     "JavaScript",
@@ -19,40 +19,29 @@ export const metadata: Metadata = {
     "Static Site Generator",
   ],
   generator: "Next.js",
-  applicationName: "Nextra",
+  applicationName: "FlowInquiry",
   appleWebApp: {
-    title: "Nextra",
+    title: "FlowInquiry",
   },
   title: {
-    default: "Nextra – Next.js Static Site Generator",
-    template: "%s | Nextra",
+    default: "FlowInquiry – Next.js Static Site Generator",
+    template: "%s | FlowInquiry",
   },
   openGraph: {
-    // https://github.com/vercel/next.js/discussions/50189#discussioncomment-10826632
     url: "./",
-    siteName: "Nextra",
+    siteName: "FlowInquiry",
     locale: "en_US",
     type: "website",
   },
   other: {
     "msapplication-TileColor": "#fff",
   },
-  twitter: {
-    site: "https://nextra.site",
-  },
-  alternates: {
-    // https://github.com/vercel/next.js/discussions/50189#discussioncomment-10826632
-    canonical: "./",
-  },
 };
 
 const banner = (
   <Banner dismissible={false}>
-    🚧 This is WIP documentation for Nextra 4.0. Dima Machina is looking{" "}
-    <Link href="https://github.com/dimaMachina">
-      for a new job or consulting
-    </Link>
-    .
+    🚀 Want to try FlowInquiry? Navigate to flowinquiry.io{" "}
+    <Link href="https://flowinquiry.io">and sign up now!</Link>.
   </Banner>
 );
 const navbar = (
@@ -67,7 +56,7 @@ const navbar = (
       // />
       <>Logo</>
     }
-    projectLink="https://github.com/shuding/nextra"
+    projectLink="https://github.com/flowinquiry"
   />
 );
 const footer = (
@@ -76,15 +65,15 @@ const footer = (
       className="x:focus-visible:nextra-focus flex items-center gap-1"
       target="_blank"
       rel="noreferrer"
-      title="vercel.com homepage"
-      href="https://vercel.com?utm_source=nextra.site"
+      title="FlowInquiry homepage"
+      href="https://flowinquiry.io"
     >
       Powered by
       {/*<VercelLogo height="20" />*/}
       <>FlowInquiry Logo</>
     </a>
     <p className="mt-6 text-xs">
-      © {new Date().getFullYear()} The Nextra Project.
+      Copyright © {new Date().getFullYear()} FlowInquiry. All rights reserved.
     </p>
   </Footer>
 );
@@ -100,7 +89,7 @@ const RootLayout: FC<{
           banner={banner}
           navbar={navbar}
           pageMap={await getPageMap()}
-          docsRepositoryBase="https://github.com/shuding/nextra/tree/main/docs"
+          docsRepositoryBase="https://github.com/flowinquiry"
           editLink="Edit this page on GitHub"
           sidebar={{ defaultMenuCollapseLevel: 1 }}
           footer={footer}

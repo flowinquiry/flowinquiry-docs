@@ -1,3 +1,5 @@
+"use client";
+
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -20,15 +22,7 @@ const ScreenshotSlideshow = ({ slides = [] }) => {
   }
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-      {/* Description Section */}
-      <div className="p-8 bg-gradient-to-r from-gray-800 via-gray-900 to-black text-white rounded-lg shadow-lg">
-        <h3 className="text-2xl font-bold mb-4">
-          {slides[currentSlide]?.title}
-        </h3>
-        <p className="text-lg">{slides[currentSlide]?.description || ""}</p>
-      </div>
-
+    <div className="relative w-full max-w-4xl mx-auto">
       {/* Swiper Section */}
       <Swiper
         modules={[Navigation, Pagination]}
@@ -41,22 +35,23 @@ const ScreenshotSlideshow = ({ slides = [] }) => {
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
-            <div className="flex justify-center items-center h-full">
-              <div className="relative max-w-full">
-                <img
-                  src={slide.image}
-                  alt={`Screenshot ${index + 1}`}
-                  className="rounded-lg shadow-lg mx-auto"
-                  height={600}
-                  width={500}
-                  loading="lazy"
-                  style={{
-                    display: "block",
-                    margin: "0 auto",
-                    objectFit: "contain",
-                  }}
-                />
-              </div>
+            <div className="relative flex justify-center items-center h-full">
+              {/* Image */}
+              <img
+                src={slide.image}
+                alt={`Screenshot ${index + 1}`}
+                className="shadow-lg w-full h-auto object-contain"
+                style={{
+                  display: "block",
+                }}
+              />
+              {/* Description Section */}
+              {index === currentSlide && (
+                <div className="absolute bottom-0 left-0 w-full p-6 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 shadow-lg">
+                  <h3 className="text-2xl font-bold mb-2">{slide.title}</h3>
+                  <p className="text-lg">{slide.description || ""}</p>
+                </div>
+              )}
             </div>
           </SwiperSlide>
         ))}
