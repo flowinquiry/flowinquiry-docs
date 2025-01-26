@@ -10,15 +10,18 @@ body {
   font-feature-settings:
     "rlig" 1,
     "calt" 1;
+  font-size: 1.3rem; /* Increased base font size */
+  line-height: 2; /* Slightly increased line height for better readability */
 }
 
 .home-content p {
   margin-top: 1.5em;
-  line-height: 1.75em;
+  line-height: 1.85em; /* Adjusted line height for better readability */
+  font-size: 1.2rem; /* Increased paragraph text size */
 }
 
 code.text-\[\.9em\] {
-  font-size: 14px;
+  font-size: 15px; /* Slightly increased code font size */
 }
 
 @media screen and (max-width: 1200px) {
@@ -29,7 +32,7 @@ code.text-\[\.9em\] {
 
 @media screen and (max-width: 720px) {
   .home-content p {
-    font-size: 0.9rem;
+    font-size: 1rem; /* Increased text size for small screens */
   }
 
   .home-content .hide-small {

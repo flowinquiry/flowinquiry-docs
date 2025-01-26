@@ -5,6 +5,7 @@ import { Banner, Head } from "nextra/components";
 import { getPageMap } from "nextra/page-map";
 import { Footer, Layout, Link, Navbar } from "nextra-theme-docs";
 import type { FC, ReactNode } from "react";
+import FlowInquiryIcon from "@components/app-logo";
 
 export const metadata: Metadata = {
   description: "Make beautiful websites with Next.js & MDX.",
@@ -47,33 +48,21 @@ const banner = (
 const navbar = (
   <Navbar
     logo={
-      // <NextraLogo
-      //     height="20"
-      //     className={cn(
-      //         '[mask-image:linear-gradient(60deg,#000_25%,rgba(0,0,0,.2)_50%,#000_75%)] [mask-position:0] [mask-size:400%]',
-      //         'hover:[mask-position:100%] hover:[transition:mask-position_1s_ease]'
-      //     )}
-      // />
-      <>Logo</>
+      <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+        <FlowInquiryIcon size={50} />
+        <span style={{ fontSize: "1.25rem", fontWeight: "bold" }}>
+          FlowInquiry
+        </span>
+      </div>
     }
     projectLink="https://github.com/flowinquiry"
   />
 );
 const footer = (
   <Footer className="flex-col items-center md:items-start">
-    <a
-      className="x:focus-visible:nextra-focus flex items-center gap-1"
-      target="_blank"
-      rel="noreferrer"
-      title="FlowInquiry homepage"
-      href="https://flowinquiry.io"
-    >
-      Powered by
-      {/*<VercelLogo height="20" />*/}
-      <>FlowInquiry Logo</>
-    </a>
     <p className="mt-6 text-xs">
-      Copyright © {new Date().getFullYear()} FlowInquiry. All rights reserved.
+      Copyright © {new Date().getFullYear()}{" "}
+      <a href={"https://flowinquiry.io"}>FlowInquiry</a>. All rights reserved.
     </p>
   </Footer>
 );
