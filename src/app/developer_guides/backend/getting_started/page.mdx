@@ -34,69 +34,157 @@ Access the latest source code for FlowInquiry's back-end at https://github.com/f
 - `commons` the common codebase for FlowInquiry backend
 - `tools` extra tools for FlowInquiry server such as liquibase database migration scripts and more
 
-### Checking environments
+### Configure the application
 
-FlowInquiry backend requires Java, Docker is already installed. You can run the `valid_checks.sh` script located in the scripts folder to verify
-if your machine is set up to work with FlowInquiry
+To run the FlowInquiry backend, users need to provide their input in the local configuration file .env.local. FlowInquiry offers two options for creating this configuration file:
 
-```bash
-➜  flowinquiry-server scripts/valid_checks.sh
-Running java_check.sh...
-Java Version Information:
-openjdk version "21.0.5" 2024-10-15 LTS
-OpenJDK Runtime Environment Temurin-21.0.5+11 (build 21.0.5+11-LTS)
-OpenJDK 64-Bit Server VM Temurin-21.0.5+11 (build 21.0.5+11-LTS, mixed mode, sharing)
+- Using Bash Scripts: Users can run provided Bash scripts, which prompt for inputs, validate the information, and then automatically generate the configuration file.
+- Editing a Template Manually: A template configuration file (.env.local.example) is provided, allowing users to manually edit and create their .env.local file. This option is recommended for Windows users who cannot run Bash scripts.
 
-Java Vendor: Eclipse Adoptium
-Java Runtime Environment: OpenJDK Runtime Environment
-Java VM Name: OpenJDK 64-Bit Server VM
-Java Home: /usr
-Java version is 21, which is greater than or equal to 21.
-java_check.sh succeeded.
-Running docker_check.sh...
-docker_check.sh succeeded.
-Your environments settings satisfy FlowInquiry's conditions
-```
+<Tabs items={['Creat config file by script', 'Edit config file manually']}>
+    <Tabs.Tab>
+        #### Checking environments
 
-### Setup scripts
+        FlowInquiry backend requires Java, Docker is already installed. You can run the `valid_checks.sh` script located in the scripts folder to verify
+        if your machine is set up to work with FlowInquiry
 
-You will need to run the following scripts:
+        ```bash
+        ➜  flowinquiry-server scripts/valid_checks.sh
+        Running java_check.sh...
+        Java Version Information:
+        openjdk version "21.0.5" 2024-10-15 LTS
+        OpenJDK Runtime Environment Temurin-21.0.5+11 (build 21.0.5+11-LTS)
+        OpenJDK 64-Bit Server VM Temurin-21.0.5+11 (build 21.0.5+11-LTS, mixed mode, sharing)
 
-`scripts/init_git_hooks.sh`: Sets up a git hook to automatically format and check code logic each time you commit changes.
+        Java Vendor: Eclipse Adoptium
+        Java Runtime Environment: OpenJDK Runtime Environment
+        Java VM Name: OpenJDK 64-Bit Server VM
+        Java Home: /usr
+        Java version is 21, which is greater than or equal to 21.
+        java_check.sh succeeded.
+        Running docker_check.sh...
+        docker_check.sh succeeded.
+        Your environments settings satisfy FlowInquiry's conditions
+        ```
+        #### Setup scripts
 
-`scripts/create_secrets.sh`: Create secrets stored in the `.env.local` file, which is used by the FlowInquiry server
+        You will need to run the following scripts:
 
-<Callout emoji="💡">
-  You can run the `scripts/all.sh` script, which will check your environment
-  settings and perform the necessary configurations, eliminating the need to run
-  multiple scripts individually
-</Callout>
+        `scripts/init_git_hooks.sh`: Sets up a git hook to automatically format and check code logic each time you commit changes.
 
-#### Sending email
+        `scripts/create_secrets.sh`: Create secrets stored in the `.env.local` file, which is used by the FlowInquiry server
 
-To use FlowInquiry's email features, such as sending activation emails to users or reminders about upcoming tasks, you'll need an SMTP account. You can configure this with providers like Gmail, Amazon SES, or any SMTP service. Please note that this email setup is intended for use in a local environment only.
+        <Callout emoji="💡">
+            You can run the `scripts/all.sh` script, which will check your environment
+            settings and perform the necessary configurations, eliminating the need to run
+            multiple scripts individually
+        </Callout>
 
-Run the script `scripts/mail_config.sh`, it will ask you the STMP information, and then it writes all to the local file `.env.local`
+        #### Sending email
 
-```bash
-➜  flowinquiry-server git:(main) ✗ scripts/mail_config.sh
-Enter your SMTP host: smtp.gmail.com
-Enter your SMTP port: 587
-Enter your username: <username>
-Enter your password: <password>
-Does SMTP require STARTTLS (y/n)? y
-Please enter the email address that will be used as the sender for outgoing emails: noreply@flowinquiry.io
-Please enter the base URL that will be used for the email template: http://localhost:3000
-Backup of .env.local created as .env.local.backup
-Configuration has been saved to .env.local
-```
+        To use FlowInquiry's email features, such as sending activation emails to users or reminders about upcoming tasks, you'll need an SMTP account. You can configure this with providers like Gmail, Amazon SES, or any SMTP service. Please note that this email setup is intended for use in a local environment only.
 
-<Callout type="info" emoji="ℹ️">
-  To use your Google credentials to send a test email, you cannot use your
-  regular email password. Instead, you'll need to generate an App Password. For
-  detailed instructions, see the guide at
-  https://support.google.com/mail/answer/185833?hl=en
-</Callout>
+        Run the script `scripts/mail_config.sh`, it will ask you the STMP information, and then it writes all to the local file `.env.local`
+
+        ```bash
+        ➜  flowinquiry-server git:(main) ✗ scripts/mail_config.sh
+        Enter your SMTP host: smtp.gmail.com
+        Enter your SMTP port: 587
+        Enter your username: username
+        Enter your password:  password
+        Does SMTP require STARTTLS (y/n)? y
+        Please enter the email address that will be used as the sender for outgoing emails: noreply@flowinquiry.io
+        Please enter the base URL that will be used for the email template: http://localhost:3000
+        Backup of .env.local created as .env.local.backup
+        Configuration has been saved to .env.local
+        ```
+
+        <Callout type="info" emoji="ℹ️">
+            To use your Google credentials to send a test email, you cannot use your
+            regular email password. Instead, you'll need to generate an App Password. For
+            detailed instructions, see the guide at
+            https://support.google.com/mail/answer/185833?hl=en
+        </Callout>
+        </Tabs.Tab>
+        <Tabs.Tab>
+            Rename the file `.env.local.example` to `.env.local`, and edit the file content per instructions inline
+
+            ```bash
+            #!/bin/bash
+
+            ################################################
+            # PostgreSQL Configuration
+            ################################################
+
+            # Password for the PostgreSQL database.
+            # This is critical for securing database access. Store it securely.
+            POSTGRES_PASSWORD='choose your own password'
+
+            # Username for connecting to the PostgreSQL database.
+            # Required for authentication with the database.
+            SPRING_DATASOURCE_USERNAME=flowinquiry
+
+            ################################################
+            # JWT Configuration
+            ################################################
+
+            # Base64-encoded secret key used for signing and verifying JWT tokens.
+            # This key is generated from a 50-character random string consisting of A-Z and 0-9.
+            # For development purposes, a pre-defined string is provided, but it is strongly recommended
+            # to generate your own unique key, especially for production environments.
+            # This key is critical for securing authentication and must be stored securely.
+            JWT_BASE64_SECRET='alBEd1VVQWpuVkxrNEQ4YnFBZmtvUk1pU2NoQ0x2UG92SW00cUZZaGx4UmRzUEUyM0dWR01yQWxPUURud0sxRDNpeVZQY1NtNGNCTElsc25kUEg4TDlySGVt'
+
+            ################################################
+            # Email Configuration (Optional)
+            ################################################
+
+            # SMTP server address for sending emails. Example: smtp.gmail.com
+            spring.mail.host=
+
+            # Port number for SMTP communication. Typically 587 for TLS.
+            spring.mail.port=
+
+            # Ensure the SMTP server port is set correctly. Usually this value equals with spring.mail.port
+            spring.mail.properties.mail.smtp.port=
+
+            # Email address used for SMTP authentication.
+            spring.mail.username=
+
+            # Password or app-specific password for SMTP authentication.
+            # Sensitive information. Use environment variables or a secret manager.
+            spring.mail.password=
+
+            # Enables SMTP authentication. Value true/false
+            spring.mail.properties.mail.smtp.auth=
+
+            # The "from" address for outgoing emails.
+            flowinquiry.mail.from=
+
+            # Base URL for links in emails, such as password resets or verification emails.
+            flowinquiry.mail.base_url=
+
+            # Enables TLS for secure SMTP communication. Value true/false
+            spring.mail.properties.mail.smtp.starttls.enable=
+
+            # Ensures TLS is required for SMTP communication. Value true/false
+            spring.mail.properties.mail.smtp.starttls.required=
+
+            ################################################
+            # OpenAI Configuration (Optional)
+            ################################################
+
+            # API key for authenticating with OpenAI services.
+            # Critical for accessing OpenAI's APIs. Store it securely.
+            OPEN_AI_API_KEY=
+
+            # Specifies the OpenAI model to use for processing requests.
+            # Example: gpt-3.5-turbo.
+            OPEN_AI_CHAT_MODEL=
+            ```
+        </Tabs.Tab>
+
+</Tabs>
 
 ### Run application
 
@@ -148,9 +236,9 @@ postgresql-1  | UTC [1] LOG:  database system is ready to accept connections
         | |_  | | _____      _| | _ __   __ _ _   _ _ _ __ _   _
         |  _| | |/ _ \ \ /\ / / || '_ \ / _` | | | | | '__| | | |
         | |   | | (_) \ V  V /| || | | | (_| | |_| | | |  | |_| |
-        \_|   |_|\___/ \_/\_/\___/_| |_|\__, |\__,_|_|_|   \__, |
-        | |              __/ |
-        |_|             |___/
+        |_|   |_|\___/ \_/\_/\___/_| |_|\__, |\__,_|_|_|   \__, |
+                                           | |              __/ |
+                                           |_|             |___/
 
 
 

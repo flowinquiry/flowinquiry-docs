@@ -10,14 +10,14 @@ body {
   font-feature-settings:
     "rlig" 1,
     "calt" 1;
-  font-size: 1.3rem; /* Increased base font size */
+  font-size: 1.2rem; /* Increased base font size */
   line-height: 2; /* Slightly increased line height for better readability */
 }
 
 .home-content p {
-  margin-top: 1.5em;
+  margin-top: 1.3em;
   line-height: 1.85em; /* Adjusted line height for better readability */
-  font-size: 1.2rem; /* Increased paragraph text size */
+  font-size: 1.1rem; /* Increased paragraph text size */
 }
 
 code.text-\[\.9em\] {

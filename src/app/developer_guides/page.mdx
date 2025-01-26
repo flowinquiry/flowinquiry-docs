@@ -10,15 +10,19 @@ FlowInquiry is an application consisting of two components: a front-end and a ba
 
 The developer guidelines provide foundational knowledge for those contributing to the FlowInquiry codebase. If you encounter issues with the FlowInquiry codebase and the documentation doesn't resolve them, feel free to raise an issue in our GitHub repository.
 
-FlowInquiry's source code, primarily written in Java, TypeScript, and Python, is platform-independent. However, some scripts are written in Bash and are supported in Bash-enabled environments such as macOS and Linux. If you're using Windows, please enable Bash support by using one of the following options:
+FlowInquiry's source code is primarily written in Java, TypeScript, and Python, making it platform-independent. However, some setup scripts are written in Bash and are supported only in Bash-enabled environments like macOS and Linux. If you're using Windows, you can enable Bash support through one of the following options:
 
-    * Windows Subsystem for Linux (WSL)
-    * Cygwin
-    * Linux Virtual Machine
+- Windows Subsystem for Linux (WSL)
+- Cygwin
+- Linux Virtual Machine
 
 <Callout type="info" emoji="ℹ️">
-  We do not provide support for Windows-specific issues or any additional tools
-  that are not used by our development team
+  Alternatively, Windows users can bypass the setup scripts by directly editing
+  the .env.local.example file provided in each repository of the front-end and
+  back-end. Additionally, we include detailed instruction guidelines for both
+  the front-end and back-end setup in their respective sections to assist with
+  manual configuration. However, please note that this approach skips the
+  environment pre-checks performed by the setup scripts.
 </Callout>
 
 ## Development tools

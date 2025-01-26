@@ -1,4 +1,4 @@
-import { Callout, FileTree } from "nextra/components";
+import { Callout, FileTree, Tabs } from "nextra/components";
 
 # Getting Started
 
@@ -24,36 +24,66 @@ Access the latest source code for flowinquiry's front-end at https://github.com/
 - `scripts` Includes useful scripts for validating environment settings, setting up project environment variables, and more
 - `src` the FlowInquiry's frontend source code
 
-#### Checking environments
+### Configure the application
 
-FlowInquiry's front-end requires Node and pnpm to be installed on your machine. You can run the valid_checks.sh script located in the scripts folder to verify if your machine is set up to work with FlowInquiry
+To run the FlowInquiry frontend, users need to provide their input in the local configuration file .env.local. FlowInquiry offers two options for creating this configuration file:
 
-```bash
-➜  FlowInquiry-frontend git:(main) scripts/valid_checks.sh
-Running node_check.sh...
-Node.js version: 20.14.0
-Node.js version is 20.14.0, which is greater than or equal to 18.
-node_check.sh succeeded.
-Running pnpm_check.sh...
-pnpm is installed.
-pnpm version: 9.7.0
-pnpm_check.sh succeeded.
-Your environments settings satisfy FlowInquiry's conditions
-```
+- Using Bash Scripts: Users can run provided Bash scripts, which prompt for inputs, validate the information, and then automatically generate the configuration file.
+- Editing a Template Manually: A template configuration file (.env.local.example) is provided, allowing users to manually edit and create their .env.local file. This option is recommended for Windows users who cannot run Bash scripts.
 
-#### Setup scripts
+<Tabs items={['Creat config file by script', 'Edit config file manually']}>
+    <Tabs.Tab>
+    #### Checking environments
 
-You will need to run the following scripts:
+    FlowInquiry's front-end requires Node and pnpm to be installed on your machine. You can run the valid_checks.sh script located in the scripts folder to verify if your machine is set up to work with FlowInquiry
 
-- `scripts/init_git_hooks.sh`: Sets up a git hook to automatically format and check code logic each time you commit changes.
+    ```bash
+    ➜  FlowInquiry-frontend git:(main) scripts/valid_checks.sh
+    Running node_check.sh...
+    Node.js version: 20.14.0
+    Node.js version is 20.14.0, which is greater than or equal to 18.
+    node_check.sh succeeded.
+    Running pnpm_check.sh...
+    pnpm is installed.
+    pnpm version: 9.7.0
+    pnpm_check.sh succeeded.
+    Your environments settings satisfy FlowInquiry's conditions
+    ```
 
-- `scripts/init_environments.sh`: Create a new `.env.local` file, which is used by the Next.js application to read predefined environment variables
+    #### Setup scripts
 
-<Callout emoji="💡">
-  You can run the `scripts/all.sh` script, which will check your environment
-  settings and perform the necessary configurations, eliminating the need to run
-  multiple scripts individually
-</Callout>
+    You will need to run the following scripts:
+
+    - `scripts/init_git_hooks.sh`: Sets up a git hook to automatically format and check code logic each time you commit changes.
+
+    - `scripts/init_environments.sh`: Create a new `.env.local` file, which is used by the Next.js application to read predefined environment variables
+
+    <Callout emoji="💡">
+        You can run the `scripts/all.sh` script, which will check your environment
+        settings and perform the necessary configurations, eliminating the need to run
+        multiple scripts individually
+    </Callout>
+    </Tabs.Tab>
+    <Tabs.Tab>
+        Rename `.env.local.example` to `.env.local` and update its content following the inline instructions
+        ```bash
+        # BACK_END_URL: The base URL of the backend API that the Next.js application communicates with.
+        # Typically used for server-side API calls in your application. Example: http://localhost:8080
+        BACK_END_URL=
+
+        # NEXT_PUBLIC_BASE_URL: A publicly exposed base URL for the backend API.
+        # Variables prefixed with NEXT_PUBLIC_ are exposed to the browser and used for client-side API calls.
+        # Example: http://localhost:8080
+        NEXT_PUBLIC_BASE_URL=
+
+        # AUTH_SECRET: A secret key used by the authentication library (`auth.js`) for securing tokens.
+        # This was automatically added by running `npx auth`.
+        # For production, it is recommended to use a securely generated key. Learn more: https://cli.authjs.dev
+        AUTH_SECRET=
+        ```
+    </Tabs.Tab>
+
+</Tabs>
 
 #### Run in dev mode
 
