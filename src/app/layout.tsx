@@ -1,23 +1,23 @@
 import "./globals.css";
 
+import FlowInquiryIcon from "@components/app-logo";
 import type { Metadata } from "next";
 import { Banner, Head } from "nextra/components";
 import { getPageMap } from "nextra/page-map";
 import { Footer, Layout, Link, Navbar } from "nextra-theme-docs";
 import type { FC, ReactNode } from "react";
-import FlowInquiryIcon from "@components/app-logo";
 
 export const metadata: Metadata = {
-  description: "Make beautiful websites with Next.js & MDX.",
+  description:
+    "FlowInquiry transforms ticket management with AI-powered insights, enhances team collaboration, and delivers customizable workflows to maximize productivity effortlessly",
   metadataBase: new URL("https://https://flowinquiry.io"),
   keywords: [
     "FlowInquiry",
-    "Next.js",
-    "React",
-    "JavaScript",
-    "MDX",
-    "Markdown",
-    "Static Site Generator",
+    "Ticket management",
+    "Workflow",
+    "Collaboration",
+    "Helpdesk",
+    "Customer support",
   ],
   generator: "Next.js",
   applicationName: "FlowInquiry",
@@ -25,7 +25,8 @@ export const metadata: Metadata = {
     title: "FlowInquiry",
   },
   title: {
-    default: "FlowInquiry – Next.js Static Site Generator",
+    default:
+      "FlowInquiry – AI-Driven Insights for Smarter Ticket Management and Collaboration",
     template: "%s | FlowInquiry",
   },
   openGraph: {
