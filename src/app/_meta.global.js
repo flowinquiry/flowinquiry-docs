@@ -4,6 +4,14 @@ export default {
     type: "page",
     display: "hidden",
   },
+  user_guides: {
+    type: "page",
+    title: "User Guides",
+    items: {
+      introduction: "Introduction",
+      getting_started: "Get started",
+    },
+  },
   developer_guides: {
     type: "page",
     title: "Developer Guides",
