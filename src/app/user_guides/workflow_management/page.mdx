@@ -1,0 +1,58 @@
+---
+description: Learn how to create, edit, and assign workflows in FlowInquiry. Manage workflow states, transitions, and SLAs to optimize request handling and automate approvals
+---
+
+# Workflow Management - Create, Edit, and Assign Workflows
+
+## What is a Workflow in FlowInquiry?
+
+Each workflow in FlowInquiry has one initial state and at least one final state, ensuring a structured progression from request creation to completion.
+
+Workflows have two scopes:
+
+- **Team Workflows**: Created within a specific team and used exclusively by that team.
+- **Global Workflows**: Defined at a global level and can be cloned into team workflows for customization.
+
+By configuring workflows, organizations can standardize processes, automate approvals, and track request statuses efficiently.
+Workflows in FlowInquiry define the structured process of handling requests, ensuring smooth progression through different stages. Each workflow consists of:
+
+- **States**: Represent various stages a request passes through.
+- **Transitions**: Define allowed movements between states.
+- **SLAs (Service Level Agreements)**: Set expected time limits for each transition to ensure timely processing.
+
+By configuring workflows, organizations can standardize processes, automate approvals, and track request statuses efficiently.
+
+By configuring workflows, organizations can standardize processes, automate approvals, and track request statuses efficiently.
+
+## Creating a Workflow
+
+1. Navigate to the **Workflows** section from the main menu.
+2. Click on **New Workflow**.
+3. Enter a name and description for the workflow.
+4. Define the workflow states and transitions.
+   ![Create workflow](/user_guides/workflow_management/create_workflow.png)
+5. Set up any required SLAs or automated actions.
+6. Click **Save** to finalize the workflow configuration.
+7. After save workflow successfully then you are able to review and verify if workflow setup properly
+   ![Preview workflow](/user_guides/workflow_management/preview_workflow.png)
+
+## Editing a Workflow
+
+1. Open the **Workflows** section.
+2. Select the workflow you want to edit.
+3. Click **Customize Workflow** to modify states, transitions, or SLAs.
+4. Save changes to apply updates.
+
+## Creating a Workflow for a Team
+
+1. Navigate to the **Teams** section.
+2. Select the team where you want to create a workflow.
+3. Click on **New Workflow** within the team settings.
+4. There are two options to create a new workflow for the team:
+
+- **Create from Scratch**: Start building a new workflow from the ground up, following a similar process as creating a global workflow.
+- **Clone from Global Workflow**: Create a copy of a global workflow and customize it to fit the team's needs.
+  ![Clone workflow](/user_guides/workflow_management/clone_global_workflow.png)
+
+5. If the user creates a workflow from scratch, they will follow a similar process as creating a global workflow. If the user selects **Clone from Global Workflow**, they need to choose the workflow to be cloned and provide the necessary details to customize it for the team.
+6. Click **Create Workflow** to finalize the workflow setup. After saving the new workflow successfully, it will be ready for use within the team scope.
