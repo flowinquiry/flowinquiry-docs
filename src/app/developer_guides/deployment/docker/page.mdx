@@ -118,7 +118,7 @@ You can change the domain name to any name you prefer.
   the file `/etc/hosts`
 </Callout>
 
-Go to the folder `flowinquiry-docker`, and execute the scripts all.sh under the folder `scripts`
+Navigate to the `flowinquiry-docker` folder and run the `all.sh` script located in the `scripts` directory.
 
 ```bash
 ➜  flowinquiry-docker git:(main) ✗ scripts/all.sh
@@ -182,10 +182,6 @@ Open the browser, and access to the address https//localhost or https://local.fl
   - Username: admin@flowinquiry.io
   - Password: admin
 
-- User:
-  - Username: user@flowinquiry.io
-  - Password: user1234
-
 #### Local HTTPS
 
 Caddy uses its local CA to issue certificates, which means that HTTP clients outside the container won’t automatically trust the TLS certificate served by Caddy.
@@ -193,3 +189,7 @@ To resolve this, you may need to install Caddy's root CA certificate in your hos
 
 The Caddy root CA certificate can be found at flowinquiry-docker/caddy/certificate-authority/root.crt. This file is only generated when you run the FlowInquiry stack
 with Caddy included. For detailed steps, refer to the Caddy documentation: [Local HTTPS with Docker](https://caddyserver.com/docs/running#local-https-with-docker)
+
+#### Upgrade FlowInquiry
+
+TBD
