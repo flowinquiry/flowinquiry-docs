@@ -1,0 +1,65 @@
+---
+description: Build your own FlowInquiry docker images.
+---
+
+import { Tabs } from "nextra/components";
+
+# FlowInquiry Docker Images
+
+## Build your own docker images
+
+You can build your own Docker images and deploy them anywhere, or use the pre-built FlowInquiry images available on [Docker Hub](https://hub.docker.com/u/flowinquiry)
+
+<Tabs items={['Front-end', 'Back-end']}>
+    <Tabs.Tab>
+        To build and publish Docker images for the FlowInquiry front-end, use the Dockerfile in the root folder along with the `scripts/docker_deployment.sh` script.
+        Use the argument `--tag $version` if you want to customize the docker image version
+
+        ```bash
+        flowinquiry-frontend git:(main) scripts/docker_deployment.sh --tag 0.0.1
+        Building Docker image...
+        [+] Building 5.2s (22/22) FINISHED                                                                                                                                       docker:desktop-linux
+        => [internal] load build definition from Dockerfile                                                                                                                                     0.0s
+        => => transferring dockerfile: 2.35kB                                                                                                                                                   0.0s
+        => [internal] load metadata for docker.io/library/node:20-alpine                                                                                                                        0.9s
+        => [auth] library/node:pull token for registry-1.docker.io
+        ...
+        What's next:
+        View a summary of image vulnerabilities and recommendations → docker scout quickview
+        Tagging Docker image with '0.0.1' and 'latest'...
+        Logging into Docker repository...
+        Authenticating with existing credentials...
+        ...
+        latest: digest: sha256:94d85f12a3944c7dcbafc6c6851b0413c9e5c48dcb9c33bea54a88287130bd79 size: 2821
+        Docker image has been pushed successfully with tags '0.0.1' and 'latest'.
+        ```
+    </Tabs.Tab>
+    <Tabs.Tab>
+        FlowInquiry backend uses Jib to build and deploy Docker images to the Docker repository. To change the Docker image
+        version, edit the `projectVersion` attribute in the `gradle.properties` file.
+
+        Open the terminal and navigate to the root folder. Use the command `./gradlew :server:jibDockerBuild -Djib.dockerClient.executable=/path/to/docker` to build the Docker image, or `./gradlew :server:jib  -Djib.dockerClient.executable=/path/to/docker` to build and deploy it.
+
+        ```bash
+        ➜  flowinquiry-server git:(main) ./gradlew :server:jibDockerBuild -Djib.dockerClient.executable=/usr/local/bin/docker
+
+        > Task :server:jibDockerBuild
+
+        Containerizing application to Docker daemon as flowinquiry/flowinquiry-server, flowinquiry/flowinquiry-server, flowinquiry/flowinquiry-server:0.0.1...
+        ...
+
+        Got output:
+
+        Container entrypoint set to [bash, -c, /entrypoint.sh]
+
+        Built image to Docker daemon as flowinquiry/flowinquiry-server, flowinquiry/flowinquiry-server, flowinquiry/flowinquiry-server:0.0.1
+        Executing tasks:
+        [==============================] 100.0% complete
+
+
+        BUILD SUCCESSFUL in 4s
+
+        ```
+    </Tabs.Tab>
+
+</Tabs>

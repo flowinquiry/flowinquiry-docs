@@ -28,7 +28,14 @@ export default {
           database_migration: "Database migration",
         },
       },
-      deployment: "Deployment",
+      deployment: {
+        title: "Deployment",
+        items: {
+          build_docker_image: "Build FlowInquiry Docker Images (Optional)",
+          docker: "Docker",
+          kubernetes: "Kubernetes",
+        },
+      },
       how_to_contributes: "How to contribute",
     },
   },
