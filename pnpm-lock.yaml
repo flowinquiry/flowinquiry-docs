@@ -52,7 +52,7 @@ importers:
         specifier: ^22.13.11
         version: 22.13.11
       '@types/react':
-        specifier: ^19.0.12
+        specifier: ^19.0.8
         version: 19.0.12
       '@typescript-eslint/parser':
         specifier: ^8.27.0
