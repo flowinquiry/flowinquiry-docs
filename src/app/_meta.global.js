@@ -24,7 +24,13 @@ export default {
         title: "Back-end",
         items: {
           getting_started: "Getting-started",
-          high_level_architect: "High-level architect",
+          overview: {
+            title: "Overview",
+            items: {
+                high_level_architect: "High-level architect",
+                data_layer: "Data Layer"
+            }
+          },
           database_migration: "Database migration",
         },
       },
