@@ -42,8 +42,15 @@ export default {
           kubernetes: "Kubernetes",
         },
       },
-      how_to_contributes: "How to contribute",
     },
+  },
+  how_to_contributes: {
+    title: "How to Contribute",
+    type: "page",
+    items: {
+      your_action_is_meaningful_to_us: "Your Action Is Meaningful to Us",
+      your_first_pr: "Your first PR",
+    }
   },
   about: {
     type: "page",
