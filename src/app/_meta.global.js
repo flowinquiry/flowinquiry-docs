@@ -23,6 +23,7 @@ export default {
       backend: {
         title: "Back-end",
         items: {
+          integration_testing: "Integration Testing",  //added the integrating section
           getting_started: "Getting-started",
           high_level_architect: "High-level architect",
           database_migration: "Database migration",

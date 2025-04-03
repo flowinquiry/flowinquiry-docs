@@ -1,0 +1,100 @@
+---
+title: Integration Testing Guidelines
+description: Learn how to write effective integration tests for FlowInquiry using TestContainers
+---
+
+# Integration Testing Guidelines
+
+Integration tests are critical for ensuring that your FlowInquiry backend components work together correctly. This guide covers how to write effective integration tests using TestContainers in the FlowInquiry ecosystem.
+
+## Benefits of Using TestContainers
+
+[TestContainers](https://www.testcontainers.org/) provides lightweight, disposable containers for your integration tests, offering several advantages:
+
+- Realistic testing environment: Tests run against actual databases and services instead of mocks
+- Consistency across environments: The same containers run in CI/CD pipelines and local development
+- Isolation: Each test suite can use its own containerized dependencies
+- Parallel test execution: TestContainers supports concurrent testing
+- Simplified setup: No need to maintain external test infrastructure
+- Comprehensive coverage: Test the full stack, including database interactions and external services
+
+## Writing Integration Tests in FlowInquiry
+
+### Test Data Management
+
+FlowInquiry uses Liquibase for database migrations, which provides an elegant way to handle test data:
+
+1. Create migration scripts dedicated to test data in the `src/main/resources/db/changelog` directory
+2. Add the `context="test"` attribute to changesets containing test data:
+
+```xml
+<changeSet id="create-test-users" author="developer" context="test">
+    <insert tableName="users">
+        <column name="id" value="test-user-1"/>
+        <column name="username" value="testuser"/>
+        <column name="email" value="test@example.com"/>
+    </insert>
+</changeSet>
+```
+
+3. These test changesets will only be applied during integration tests, keeping your development and production databases clean
+
+### Writing Integration Tests
+
+To create an integration test in FlowInquiry:
+
+1. Create a test class in the `src/integration-test/java` directory
+2. Annotate the class with `@IntegrationTest`:
+
+```java
+@IntegrationTest
+public class UserServiceIntegrationTest {
+    
+    @Autowired
+    private UserService userService;
+    
+    @Test
+    public void testFindUserById() {
+        User user = userService.findById("test-user-1");
+        assertNotNull(user);
+        assertEquals("testuser", user.getUsername());
+    }
+}
+```
+
+The `@IntegrationTest` annotation handles:
+- Starting the required containers (PostgreSQL, Redis, etc.)
+- Applying database migrations with test context
+- Configuring Spring to use the containerized services
+- Cleaning up after tests complete
+
+### Running Integration Tests
+
+#### Running in IDE
+
+To run integration tests in your IDE:
+1. Make sure you have Docker installed and running
+2. Right-click on the test class and select "Run as JUnit Test"
+3. If you want to debug, right-click and choose "Debug as JUnit Test"
+
+Most popular IDEs (IntelliJ IDEA, Eclipse, VS Code) support running these tests directly.
+
+#### Running with Gradle
+
+To run integration tests using Gradle:
+
+```bash
+./gradlew integrationTest
+```
+
+This will:
+1. Start the required Docker containers
+2. Execute all tests annotated with `@IntegrationTest`
+3. Generate test reports in the `build/reports/tests/integrationTest` directory
+4. Shut down and clean up containers after completion
+
+If you want to run a specific integration test class:
+
+```bash
+./gradlew integrationTest --tests "com.flowinquiry.backend.UserServiceIntegrationTest"
+```
