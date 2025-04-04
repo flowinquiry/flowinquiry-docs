@@ -23,7 +23,7 @@ export default {
       backend: {
         title: "Back-end",
         items: {
-          integration_testing: "Integration Testing",  //added the integrating section
+          integration_testing: "Integration Testing", //added the integrating section
           getting_started: "Getting-started",
           high_level_architect: "High-level architect",
           database_migration: "Database migration",
@@ -45,7 +45,7 @@ export default {
     items: {
       your_action_is_meaningful_to_us: "Your Action Is Meaningful to Us",
       your_first_pr: "Your first PR",
-    }
+    },
   },
   about: {
     type: "page",

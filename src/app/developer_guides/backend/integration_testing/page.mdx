@@ -49,10 +49,10 @@ To create an integration test in FlowInquiry:
 ```java
 @IntegrationTest
 public class UserServiceIntegrationTest {
-    
+
     @Autowired
     private UserService userService;
-    
+
     @Test
     public void testFindUserById() {
         User user = userService.findById("test-user-1");
@@ -63,6 +63,7 @@ public class UserServiceIntegrationTest {
 ```
 
 The `@IntegrationTest` annotation handles:
+
 - Starting the required containers (PostgreSQL, Redis, etc.)
 - Applying database migrations with test context
 - Configuring Spring to use the containerized services
@@ -73,6 +74,7 @@ The `@IntegrationTest` annotation handles:
 #### Running in IDE
 
 To run integration tests in your IDE:
+
 1. Make sure you have Docker installed and running
 2. Right-click on the test class and select "Run as JUnit Test"
 3. If you want to debug, right-click and choose "Debug as JUnit Test"
@@ -88,6 +90,7 @@ To run integration tests using Gradle:
 ```
 
 This will:
+
 1. Start the required Docker containers
 2. Execute all tests annotated with `@IntegrationTest`
 3. Generate test reports in the `build/reports/tests/integrationTest` directory
